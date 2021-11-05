@@ -1,4 +1,6 @@
-### To-Do
+### Just trying out discord.py 😀
+
+#### To-Do
 - [x] greet a newly joined member in a channel (random message)
 - [x] while adding a reaction to a message send a message to a channel (<user> gave reaction to <user>)
 - [x] parameterized command, create a role named the parameter recieved and assign it to the user.
