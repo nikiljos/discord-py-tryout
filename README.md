@@ -6,6 +6,12 @@
 - [x] parameterized command, create a role named the parameter recieved and assign it to the user.
 - [x] using a parameterized command(eg - !register <name>) insert the name to database, if same name tries to register again send error message to channel.
 - [x] with a role restricted command retrieve all names in the database ( eg - !names)
+ 
+ 
+MySQL
+```
+CREATE TABLE users (name VARCHAR(255))
+```
 
 ### Screenshots
 ![di1](https://user-images.githubusercontent.com/57913645/140576146-1b40d59c-5830-4a13-942f-b758070b6772.jpg)
