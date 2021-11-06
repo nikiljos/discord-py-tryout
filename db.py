@@ -2,10 +2,10 @@ import mysql.connector
 import os
 
 mydb = mysql.connector.connect(
-  host="localhost",
-  port=3000,
-  user="root",
+  host=os.getenv('mysql_host'),
+  port=os.getenv('mysql_port'),
+  user=os.getenv('mysql_user'),
   password=os.getenv('mysql_pass'),
-  database='mutask'
+  database=os.getenv('mysql_db')
 )
 
