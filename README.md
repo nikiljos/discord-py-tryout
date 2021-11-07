@@ -9,10 +9,10 @@
 
 #### Commands
 - `!register yourname` - to add yourname to the db
-- `!names` - to list all names in db(requires nikhil role)
+- `!names` - to list all names in db(requires `nikhil` role)
 - `!role rolename` - to get the specified role  
  
-MySQL
+**MySQL**
 ```
 CREATE TABLE users (name VARCHAR(255))
 ```
@@ -20,7 +20,19 @@ CREATE TABLE users (name VARCHAR(255))
 
 
 ### Screenshots
+*Bot welcoming new users*
+ 
 ![di1](https://user-images.githubusercontent.com/57913645/140576146-1b40d59c-5830-4a13-942f-b758070b6772.jpg)
+ 
+*`!role rolename` - to get the specified role*
+ 
 ![di2](https://user-images.githubusercontent.com/57913645/140576154-bf05fbf0-bf8a-45a4-841b-6733c48ecb74.jpg)
+ 
+*`!register yourname` - to add yourname to the db*  
+*`!names` - to list all names in db(requires `nikhil` role)*
+ 
 ![di3](https://user-images.githubusercontent.com/57913645/140576160-d6e851c4-4ea0-4aef-8688-b547413acbf5.jpg)
+ 
+*Sending message when someone reacts*
+ 
 ![di4](https://user-images.githubusercontent.com/57913645/140576168-0e0538c4-9ca2-4717-bff6-a293cc99f9de.jpg)
