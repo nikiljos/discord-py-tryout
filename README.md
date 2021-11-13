@@ -12,9 +12,12 @@
 - `!names` - to list all names in db(requires `nikhil` role)
 - `!role rolename` - to get the specified role  
  
-**MySQL**
+**MySQL** To Create Table
 ```
-CREATE TABLE users (name VARCHAR(255))
+CREATE TABLE users (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255)
+)
 ```
 
 
