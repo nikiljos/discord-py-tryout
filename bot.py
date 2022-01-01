@@ -48,7 +48,8 @@ async def role(ctx,*args):
 async def register(ctx,*args):
     if(len(args)>0):
         name = args[0]
-        sel=users.select().where(users.name==name)
+        print(name)
+        sel=users.select().filter_by(name=name)
         data=conn.execute(sel).fetchall()
         print(data)
         # print()
