@@ -3,7 +3,6 @@ asgiref==3.4.1
 async-timeout==3.0.1
 attrs==21.2.0
 blinker==1.4
-Brlapi==0.8.2
 certifi==2020.6.20
 chardet==4.0.0
 chrome-gnome-shell==0.0.0
