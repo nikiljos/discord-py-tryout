@@ -7,9 +7,10 @@ from discord.utils import get
 from dotenv import load_dotenv
 import os
 
+
 load_dotenv()
-from db import mydb
-mycursor = mydb.cursor()
+from db import users,conn
+# mycursor = mydb.cursor()
 
 intents=discord.Intents.all()
 client = commands.Bot(command_prefix='!',intents=intents)
@@ -47,16 +48,15 @@ async def role(ctx,*args):
 async def register(ctx,*args):
     if(len(args)>0):
         name = args[0]
-        find_sql="SELECT name FROM users WHERE name=%s"
-        insert_sql="INSERT INTO users (name) VALUES (%s)"
-        val=(name,)
-        mycursor.execute(find_sql,val)
-        data=mycursor.fetchall()
+        sel=users.select().where(users.name==name)
+        data=conn.execute(sel).fetchall()
+        print(data)
+        # print()
         if(len(data)>0):
             await ctx.send("Name already registered")
         else:
-            mycursor.execute(insert_sql,val)
-            mydb.commit()
+            ins=users.insert().values(name=name)
+            conn.execute(ins)
             await ctx.send("Registered Successfully")
 
 
@@ -64,12 +64,12 @@ async def register(ctx,*args):
 @client.command()
 @commands.has_role('nikhil')
 async def names(ctx):  
-    find_sql="SELECT name FROM users"
-    mycursor.execute(find_sql)
-    data=mycursor.fetchall()
     draft=""
+    sel=users.select()
+    data=conn.execute(sel).fetchall()
+    print(data)
     for i in range(len(data)):
-        draft+=data[i][0]+"\n"
+        draft+=data[i][1]+"\n"
     await ctx.send(draft)
        
 
@@ -83,8 +83,6 @@ async def on_raw_reaction_add(reaction):
     else:
         emoji=f"<:{reaction.emoji.name}:{reaction.emoji.id}>"
     await channel.send(f"{reaction.member.name} reacted with {emoji} to {message.author.name}'s message")
-
-
 
 
 client.run(os.getenv('discord'))
